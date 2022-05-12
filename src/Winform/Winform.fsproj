@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Fsharp_SDL2</RootNamespace>
+    <Platforms>AnyCPU;x64</Platforms>
+    <ServerGarbageCollection>true</ServerGarbageCollection>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Remove="Resources\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="resources.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <Compile Include="Resource.fs" />
+    <Compile Include="MainForm.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="resources.resx" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Update="res.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
